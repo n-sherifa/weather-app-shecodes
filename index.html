@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>weather</title>
+    <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous"
+  />
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="./src/styles.css">
+    <script src="https://kit.fontawesome.com/924837934b.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <main class="container mt-5 mb-5">
+        <form id="form" class="mb-5">
+            <div class="row">
+                <div class="col">
+
+                    <label for="location-search" class="col-12">Enter your location here</label>
+                    <input type="search" id="location-search" placeholder="Search">
+                    <i class="fa-solid fa-search search-icon"></i>
+                    <button class="btn btn-primary">Search</button>
+                </div>
+               <div class="col m-auto">
+                <button
+                type="button"
+                class="btn btn-success m-0"
+                id="current-location"
+              >
+                Current location
+              </button>
+               </div>
+            </div>
+        </form>
+        <div class="mb-5">
+            <div class="row">
+                <div class="col-3 d-flex flex-column justify-content-center">
+                    <h2 class="fs-5"  id="date">Today</h2>
+                    <h3 class="fs-1 mb-0" id="city">Tamale</h3>
+                    <ul class="weather-conditions">
+                        <li>wind: <span id="wind">00</span></li>
+                        <li>humidity: <span id="humidity">00</span></li>
+                        <li id="description">Heavy Showers</li>
+                    </ul>
+                </div>
+                <div class="col-9 col-md-7 temperature-now">
+                    <p class="card-text text-end emoji">
+                        <i class="fa-solid fa-cloud-showers-water"></i>
+                        <span><span id="temp">26</span><sup><small class="fs-5">&#176C</small></sup></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div class="row">
+                <div class="col-md-2 col-4 p-0">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title text-center"  id="date">Monday</h5>
+                            <div class="temperature-next">
+                                <p class="card-text text-center">28<sup><small class="fs-5">&#176C</small></sup></p>
+                                <p class="card-text text-center weather-description">Thunder Storm</p>
+                                <p class="card-text text-center emoji">
+                                    <i class="fa-solid fa-cloud-bolt"></i>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-2 col-4 p-0">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title text-center"  id="date">Tuesday</h5>
+                            <div class="temperature-next">
+                                <p class="card-text text-center">30<sup><small class="fs-5">&#176C</small></sup></p>
+                                <p class="card-text text-center weather-description">Thunder Storm</p>
+                                <p class="card-text text-center emoji">
+                                    <i class="fa-solid fa-cloud"></i>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-2 col-4 p-0">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title text-center" id="date">Wednesday</h5>
+                            <div class="temperature-next">
+                                <p class="card-text text-center">27<sup><small class="fs-5">&#176C</small></sup></p>
+                                <p class="card-text text-center weather-description">Thunder Storm</p>
+                                <p class="card-text text-center emoji">
+                                    <i class="fa fa-cloud-showers-water"></i>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-2 col-4 p-0">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title text-center" id="date">Thursday</h5>
+                            <div class="temperature-next">
+                                <p class="card-text text-center">26<sup><small class="fs-5">&#176C</small></sup></p>
+                                <p class="card-text text-center weather-description">Thunder Storm</p>
+                                <p class="card-text text-center emoji">
+                                    <i class="fa-solid fa-cloud-rain"></i>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-2 col-4 p-0">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title text-center"  id="date">Friday</h5>
+                            <div class="temperature-next">
+                                <p class="card-text text-center temperature-next">33<sup><small
+                                            class="fs-5">&#176C</small></sup></p>
+                                <p class="card-text text-center weather-description">Thunder Storm</p>
+                                <p class="card-text text-center emoji">
+                                    <i class="fa fa-sun"></i>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+<script  src="src/index.js"></script>
+
+</html>
