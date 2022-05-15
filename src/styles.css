@@ -1,39 +1,55 @@
 .temperature-now {
-    font-size: 84px;
-  }
-  
-  .temperature-next {
-    font-size: 48px;
-  }
-  
-  .temperature-next > * {
-    margin: 0;
-  }
-  
-  .weather-description {
-    font-size: 12px;
-  }
-  
-  .search-icon {
-    position: relative;
-    right: 25px;
-  }
-  
-  h5 {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-   button {
-    border: 1px solid #dadde1;
-    padding: 15px;
-    margin: 20px auto;
-    border-radius: 10px;
-    max-width: 600px;
-  }
-  
+  font-size: 84px;
+}
+
+.temperature-next {
+  font-size: 48px;
+}
+
+.temperature-next > * {
+  margin: 0;
+}
+
+.weather-description {
+  font-size: 12px;
+}
+
+.search-icon {
+  position: relative;
+  right: 25px;
+}
+
+h5 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+ button {
+  border: 1px solid #dadde1;
+  padding: 15px;
+  margin: 20px auto;
+  border-radius: 10px;
+  max-width: 600px;
+}
+
 
 .weather-conditions {
-  list-style-type: none;
+list-style-type: none;
+padding: 0;
 }
-  
+.source{
+  text-align: center;
+  margin-top: auto;
+}
+
+#farenheit {
+ color: blue;
+}
+
+#farenheit:hover, #celcius:hover {
+cursor: pointer;
+}
+
+#description {
+font-size: 1rem;
+}

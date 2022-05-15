@@ -7,6 +7,8 @@ let currentLocationBtn = document.getElementById("current-location")
 let date = document.getElementById("date")
 let humidity = document.getElementById("humidity")
 let Windspeed = document.getElementById("wind")
+let weatherImg = document.getElementById("weather-img")
+let weatherIcon = document.getElementById("weather-icon")
 
 
 date.innerText = formatDate(new Date())
@@ -31,7 +33,13 @@ function displayWeather(res)
     description.innerText = res.data.weather[0].description
     temp.innerText = Math.round(res.data.main.temp)
     humidity.innerHTML =  res.data.main.humidity
-  wind.innerHTML = res.data.wind.speed 
+    wind.innerHTML = res.data.wind.speed 
+    weatherIcon.style.display = 'none'
+    weatherImg.setAttribute(
+        "src",
+        `http://openweathermap.org/img/wn/${res.data.weather[0].icon}@2x.png`
+      );
+      weatherImg.setAttribute("alt", res.data.weather[0].description);
 }
 
 currentLocationBtn.addEventListener("click", getCurrentLocationWeather);
@@ -76,3 +84,27 @@ function formatDate(date) {
   
     return `${day} ${hours}:${minutes}`;
   }
+
+  let isInFarenheit = false
+  let farenheit = document.getElementById("farenheit")
+  let celcius = document.getElementById("celcius")
+  farenheit.addEventListener("click", function(){
+      if (!isInFarenheit){
+          temp.innerText = Math.round((Number(temp.innerText) * 9/5) + 32);  
+            isInFarenheit = true;
+            celcius.style.color = "blue";
+            farenheit.style.color = "black";
+
+      }
+  }
+  
+  )
+  celcius.addEventListener("click", function(){
+      if (isInFarenheit){
+          temp.innerText = Math.round((Number(temp.innerText)  - 32 ) * 5/9);  
+            isInFarenheit = false;
+            celcius.style.color = "unset";
+            farenheit.style.color = "blue";
+
+      }
+  })
